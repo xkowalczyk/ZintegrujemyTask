@@ -193,13 +193,13 @@ namespace ZintegrujemyTask.Services
             string[] localFiles = {
                 "Products.csv", "Inventory.csv", "Prices.csv"
             };
-            /*
+            
             for (int i = 0; i < urls.Length; i++)
             {
                 var data = await _httpClient.GetByteArrayAsync(urls[i]);
                 await File.WriteAllBytesAsync(localFiles[i], data);
             }
-            */
+            
             List<Product> ProductList = await GetProductsAsync(localFiles[0]);
             List<ProductPrice> PriceList = await GetProductPriceAsync(localFiles[2]);
             List<StockStatus> StockList = await GetStockStatusAsync(localFiles[1]);
